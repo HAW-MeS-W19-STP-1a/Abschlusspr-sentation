@@ -1,0 +1,12 @@
+\select@language {german}
+\beamer@sectionintoc {1}{Einleitung}{2}{0}{1}
+\beamer@sectionintoc {2}{Software}{5}{0}{2}
+\beamer@subsectionintoc {2}{1}{Fertig}{6}{0}{2}
+\beamer@subsectionintoc {2}{2}{Ausstehend}{9}{0}{2}
+\beamer@sectionintoc {3}{Elektronik}{10}{0}{3}
+\beamer@subsectionintoc {3}{1}{Fertig}{11}{0}{3}
+\beamer@subsectionintoc {3}{2}{Ausstehend}{12}{0}{3}
+\beamer@sectionintoc {4}{Aufbau}{13}{0}{4}
+\beamer@subsectionintoc {4}{1}{Fertig}{14}{0}{4}
+\beamer@subsectionintoc {4}{2}{Ausstehend}{15}{0}{4}
+\beamer@sectionintoc {5}{Zeitplan}{16}{0}{5}
