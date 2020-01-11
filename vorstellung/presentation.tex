@@ -108,7 +108,7 @@
 \author{Isabell Albrecht, Erik Engelhardt, Oliver Kochan, Florian
   Steffens} % Your name
 \institute[HAW] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
-{ Hochschule fÃ¼r angewandte Wissenschaften -- Hamburg
+{ Hochschule für angewandte Wissenschaften -- Hamburg
   \\ % Your institution for the title page
   \medskip
   % \textit{erik.engelhardt@haw-hamburg.de,
@@ -147,131 +147,175 @@
   % \frametitle{Gliederung} % Table of contents slide, comment this block out to remove it
   \tableofcontents % Throughout your presentation, if you choose to use \section{} and \subsection{} commands, these will automatically be printed on this slide as an overview of your presentation
 \end{frame}
+% ----------------------------------------------------------------------------------------
+% PRESENTATION SLIDES NEW
+% ----------------------------------------------------------------------------------------
+
+\section{Live-Demo}
+
+\section{Nutzeroberfläche}
+
+\begin{frame}
+  \frametitle{Funktionen}
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{./img/ui_simulated_graph}
+\end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Model-View-Controller}
+  \begin{figure}[H]
+  \centering
+  \includegraphics[width=\textwidth]{./img/MVC.png}
+\end{figure}  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Verwendete Python-Packages}
+  \begin{itemize}
+\item PyQt5: Als Framework für die Oberfläche.
+\item pyqtgraph: Für die graphische Darstellung der Messdaten.
+\item serial: Für die serielle Kommunikation, über Bluetooth, mit der Wetterstation.
+\item pandas: Für die Strukturierung der Messdaten.
+\item numpy: Für das Erstellen von Testdaten.
+\end{itemize}
+
+\end{frame}
+
+\section{3D gedruckte Komponenten}
+
+
+
+\section{Fazit}
+
+
+
 
 % ----------------------------------------------------------------------------------------
-% PRESENTATION SLIDES
+% PRESENTATION SLIDES OLD
 % ----------------------------------------------------------------------------------------
 
-\section{Software}
-% - zusammenfassen der Puntke aus Vorlage - eingrenzung Messbereiche
-\subsection{Fertig}
-\begin{frame}
-  \frametitle{Software - Fertig}
-  \begin{itemize}
-  \item \emph{GrundgerÃ¼st}
-  \item \emph{Ansteuerung I2C, SPI, UART, ADC, RTC}
-  \item \emph{Einlesen und Umrechnen der Sensordaten}
-  \item \emph{Lageregelung}
-  \item \emph{Auswertung NMEA-Sentences vom GPS-Modul}
-  \item \emph{Berechnung von Azimut und Elevation}
-  \item \emph{Kommunikation Ã¼ber Bluetooth}
-  \item \emph{Externe Bibliothek fÃ¼r FAT32-Dateisystem}
-  \item \emph{EnergiesparmaÃŸnahmen}
-  \end{itemize}
-\end{frame}
-
-\begin{frame}
-  \frametitle{Berechnung der Sonnenposition}
-  \begin{itemize}
-  \item Berechnung von Zenith und Azimut
-  \item Implementierung nach \citet[]{Roderick1992}
-  \end{itemize}
-  \begin{figure}[hbtp]
-    \centering
-    \includegraphics[width=0.6\textwidth]{./img/Representation-of-azimuth-and-zenith-angles.png}
-    \caption{Beschreibung der Sonnenposition durch Zenith und
-      Azimut~\cite[]{Nou2016}}\label{fig:zen_azi}
-  \end{figure}
-\end{frame}
-\begin{frame}
-  \frametitle{Berechnung der Sonnenposition (Beispiel)}
-  \begin{itemize}
-  \item Hamburg, 26.11.2019, 9:30h
-  \item Zenith = 81.1Â°
-  \item Azimuth = 143.3Â°
-  \end{itemize}
-  \begin{figure}[hbtp]
-    \centering
-    \includegraphics[width=0.6\textwidth]{./img/Representation-of-azimuth-and-zenith-angles.png}
-    \caption{Beschreibung der Sonnenposition durch Zenith und
-      Azimut~\cite[]{Nou2016}}\label{fig:zen_azi}
-  \end{figure}
-\end{frame}
-\subsection{Ausstehend}
-\begin{frame}
-  \frametitle{Software - Ausstehend}
-  \begin{itemize}
-  \item \emph{Zeitgesteuerte NachfÃ¼hrung des Panels}
-  \item \emph{Bluetooth: AT command set; Demo-Mode}
-  \item \emph{Visualisierungssoftware auf einem PC}
-  \item \emph{Speichern der Sensordaten auf der SD-Karte}
-  \end{itemize}
-\end{frame}
-
+% \section{Software}
+% % - zusammenfassen der Puntke aus Vorlage - eingrenzung Messbereiche
+% \subsection{Fertig}
+% \begin{frame}
+%   \frametitle{Software - Fertig}
+%   \begin{itemize}
+%   \item \emph{Grundgerüst}
+%   \item \emph{Ansteuerung I2C, SPI, UART, ADC, RTC}
+%   \item \emph{Einlesen und Umrechnen der Sensordaten}
+%   \item \emph{Lageregelung}
+%   \item \emph{Auswertung NMEA-Sentences vom GPS-Modul}
+%   \item \emph{Berechnung von Azimut und Elevation}
+%   \item \emph{Kommunikation Ã¼ber Bluetooth}
+%   \item \emph{Externe Bibliothek für FAT32-Dateisystem}
+%   \item \emph{Energiesparmaßnahmen}
+%   \end{itemize}
 % \end{frame}
-\section{Elektronik}
-% - Sensoren kurz vorstellen und Bezug auf Anforderungen nehmen
-\begin{frame}
-  \frametitle{Elektronik - Fertig}
-  \subsection{Fertig}
+
+% \begin{frame}
+%   \frametitle{Berechnung der Sonnenposition}
+%   \begin{itemize}
+%   \item Berechnung von Zenith und Azimut
+%   \item Implementierung nach \citet[]{Roderick1992}
+%   \end{itemize}
+%   \begin{figure}[hbtp]
+%     \centering
+%     \includegraphics[width=0.6\textwidth]{./img/Representation-of-azimuth-and-zenith-angles.png}
+%     \caption{Beschreibung der Sonnenposition durch Zenith und
+%       Azimut~\cite[]{Nou2016}}\label{fig:zen_azi}
+%   \end{figure}
+% \end{frame}
+% \begin{frame}
+%   \frametitle{Berechnung der Sonnenposition (Beispiel)}
+%   \begin{itemize}
+%   \item Hamburg, 26.11.2019, 9:30h
+%   \item Zenith = 81.1°
+%   \item Azimuth = 143.3°
+%   \end{itemize}
+%   \begin{figure}[hbtp]
+%     \centering
+%     \includegraphics[width=0.6\textwidth]{./img/Representation-of-azimuth-and-zenith-angles.png}
+%     \caption{Beschreibung der Sonnenposition durch Zenith und
+%       Azimut~\cite[]{Nou2016}}\label{fig:zen_azi}
+%   \end{figure}
+% \end{frame}
+% \subsection{Ausstehend}
+% \begin{frame}
+%   \frametitle{Software - Ausstehend}
+%   \begin{itemize}
+%   \item \emph{Zeitgesteuerte Nachführung des Panels}
+%   \item \emph{Bluetooth: AT command set; Demo-Mode}
+%   \item \emph{Visualisierungssoftware auf einem PC}
+%   \item \emph{Speichern der Sensordaten auf der SD-Karte}
+%   \end{itemize}
+% \end{frame}
+
+% % \end{frame}
+% \section{Elektronik}
+% % - Sensoren kurz vorstellen und Bezug auf Anforderungen nehmen
+% \begin{frame}
+%   \frametitle{Elektronik - Fertig}
+%   \subsection{Fertig}
         
-  \begin{itemize}
-  \item \emph{Spannungsversorgung}
-  \item \emph{Schaltplan}
-  \item \emph{Platinenlayout}
-  \item \emph{Test der Motoren}
-  \end{itemize}
-\end{frame}
+%   \begin{itemize}
+%   \item \emph{Spannungsversorgung}
+%   \item \emph{Schaltplan}
+%   \item \emph{Platinenlayout}
+%   \item \emph{Test der Motoren}
+%   \end{itemize}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Elektronik - Ausstehend}
-  \subsection{Ausstehend}
-  \begin{itemize}
-  \item \emph{Aufbau der Platine}
-  \item \emph{Verkabelung der Sensoren}
-  \item \emph{Kabelmanagement}
-  \end{itemize}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Elektronik - Ausstehend}
+%   \subsection{Ausstehend}
+%   \begin{itemize}
+%   \item \emph{Aufbau der Platine}
+%   \item \emph{Verkabelung der Sensoren}
+%   \item \emph{Kabelmanagement}
+%   \end{itemize}
+% \end{frame}
     
-\section{Aufbau}
-\begin{frame}
-  \frametitle{Aufbaue - Fertig}
-  \subsection{Fertig}
-  \begin{itemize}
-  \item \emph{Planung}
-  \item \emph{StabilitÃ¤t des Solarmoduls}
-  \item \emph{3D-Druck - Halterung fÃ¼r Sensoren}
-  \end{itemize}
-  \begin{figure}[hbtp]
-    \centering \includegraphics[width=0.8\textwidth]{./img/druck.png}
-    \caption{Adapter und Halter fÃ¼r die Sensoren}
-  \end{figure}
-\end{frame}
+% \section{Aufbau}
+% \begin{frame}
+%   \frametitle{Aufbaue - Fertig}
+%   \subsection{Fertig}
+%   \begin{itemize}
+%   \item \emph{Planung}
+%   \item \emph{Stabilität des Solarmoduls}
+%   \item \emph{3D-Druck - Halterung für Sensoren}
+%   \end{itemize}
+%   \begin{figure}[hbtp]
+%     \centering \includegraphics[width=0.8\textwidth]{./img/druck.png}
+%     \caption{Adapter und Halter für die Sensoren}
+%   \end{figure}
+% \end{frame}
 
-\begin{frame}
-  \frametitle{Aufbau - Ausstehend}
-  \subsection{Ausstehend}
-  \begin{itemize}
-  \item \emph{Montage - Halterungen}
-  \item \emph{Montage - Sensoren}
-  \item \emph{Montage - Kabel}
-  \item \emph{Montage - GehÃ¤use (Platine)}
-  \item \emph{Montage - Spannungsversorgung}
-  \item \emph{3D-Druck - GehÃ¤use}
-  \end{itemize}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Aufbau - Ausstehend}
+%   \subsection{Ausstehend}
+%   \begin{itemize}
+%   \item \emph{Montage - Halterungen}
+%   \item \emph{Montage - Sensoren}
+%   \item \emph{Montage - Kabel}
+%   \item \emph{Montage - Gehäuse (Platine)}
+%   \item \emph{Montage - Spannungsversorgung}
+%   \item \emph{3D-Druck - Gehäuse}
+%   \end{itemize}
+% \end{frame}
 
-\section{Zeitplan}
-% - groben Zeitplan vorstellen (Diagramm)
+% \section{Zeitplan}
+% % - groben Zeitplan vorstellen (Diagramm)
 
-\begin{frame}
-  \frametitle{Zeitplan}
-  \begin{itemize}
-  \item \emph{Planung ist vollstÃ¤ndig abgeschlossen}
-  \item \emph{FortfÃ¼hrung nach Ankunft der Platine}
-  \item \emph{Dokumentation} %wird Montag eingereicht
-  \end{itemize}
-\end{frame}
+% \begin{frame}
+%   \frametitle{Zeitplan}
+%   \begin{itemize}
+%   \item \emph{Planung ist vollständig abgeschlossen}
+%   \item \emph{Fortführung nach Ankunft der Platine}
+%   \item \emph{Dokumentation} %wird Montag eingereicht
+%   \end{itemize}
+% \end{frame}
 \begin{frame}[allowframebreaks]
   \frametitle{Literatur- und Quellenverzeichnis}
   \bibliographystyle{plainnat} \bibliography{literature}

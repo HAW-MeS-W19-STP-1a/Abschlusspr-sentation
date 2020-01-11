@@ -1,12 +1,6 @@
-\select@language {german}
+\babel@toc {german}{}
 \beamer@sectionintoc {1}{Einleitung}{2}{0}{1}
-\beamer@sectionintoc {2}{Software}{5}{0}{2}
-\beamer@subsectionintoc {2}{1}{Fertig}{6}{0}{2}
-\beamer@subsectionintoc {2}{2}{Ausstehend}{9}{0}{2}
-\beamer@sectionintoc {3}{Elektronik}{10}{0}{3}
-\beamer@subsectionintoc {3}{1}{Fertig}{11}{0}{3}
-\beamer@subsectionintoc {3}{2}{Ausstehend}{12}{0}{3}
-\beamer@sectionintoc {4}{Aufbau}{13}{0}{4}
-\beamer@subsectionintoc {4}{1}{Fertig}{14}{0}{4}
-\beamer@subsectionintoc {4}{2}{Ausstehend}{15}{0}{4}
-\beamer@sectionintoc {5}{Zeitplan}{16}{0}{5}
+\beamer@sectionintoc {2}{Live-Demo}{5}{0}{2}
+\beamer@sectionintoc {3}{Nutzeroberfl\"ache}{6}{0}{3}
+\beamer@sectionintoc {4}{3D gedruckte Komponenten}{9}{0}{4}
+\beamer@sectionintoc {5}{Fazit}{10}{0}{5}
