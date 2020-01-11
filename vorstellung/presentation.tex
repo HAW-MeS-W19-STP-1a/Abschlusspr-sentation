@@ -158,35 +158,94 @@
 \begin{frame}
   \frametitle{Funktionen}
   \begin{figure}[H]
+    \centering
+    \includegraphics[width=\textwidth]{./img/ui_simulated_graph}
+  \end{figure}
+\end{frame}
+\begin{frame}
+  \frametitle{Funktionen}
+  \begin{figure}[H]
   \centering
-  \includegraphics[width=\textwidth]{./img/ui_simulated_graph}
+  \includegraphics[width=\textwidth]{./img/ui_simulated_table}
 \end{figure}
 \end{frame}
-
+\begin{frame}
+  \frametitle{Geplante Funktionen}
+  \begin{itemize}
+  \item Speichern und Laden von Messdaten auf dem Computer
+  \item Auslagerung der Kommunikation mit der Wetterstation in einen eigenen Task
+  \item Einstellen der Kommunikationschnittstelle über die Benutzeroberfläche
+  \item Benutzerdefinierte Änderung der Position und des Datums / der Zeit über ein Bedienelement
+  \end{itemize}
+\end{frame}
 \begin{frame}
   \frametitle{Model-View-Controller}
   \begin{figure}[H]
-  \centering
-  \includegraphics[width=\textwidth]{./img/MVC.png}
-\end{figure}  
+    \centering \includegraphics[width=.7\textwidth]{./img/MVC.png}
+  \end{figure}
 \end{frame}
 
 \begin{frame}
   \frametitle{Verwendete Python-Packages}
   \begin{itemize}
-\item PyQt5: Als Framework für die Oberfläche.
-\item pyqtgraph: Für die graphische Darstellung der Messdaten.
-\item serial: Für die serielle Kommunikation, über Bluetooth, mit der Wetterstation.
-\item pandas: Für die Strukturierung der Messdaten.
-\item numpy: Für das Erstellen von Testdaten.
-\end{itemize}
+  \item PyQt5: Als Framework für die Oberfläche.
+  \item pyqtgraph: Für die graphische Darstellung der Messdaten.
+  \item serial: Für die serielle Kommunikation, über Bluetooth, mit
+    der Wetterstation.
+  \item pandas: Für die Strukturierung der Messdaten.
+  \item numpy: Für das Erstellen von Testdaten.
+  \end{itemize}
 
 \end{frame}
 
 \section{3D gedruckte Komponenten}
-
-
-
+\begin{frame}
+  \frametitle{Nebengehäuse}
+  \begin{itemize}
+  \item Sichere Unterbringung von GPS-Modul, Kompass-Modul, und Neigungssensor
+  \item Befestigung an der Wetterstation mittels Schrauben
+  \item Befestigung des Deckels mittels Steckverbindung und Kabelbindern
+  \end{itemize}
+  \begin{figure}[H]
+    \centering \includegraphics[width=.7\textwidth]{./img/ST_Halterv5}
+  \end{figure}
+\end{frame}
+\begin{frame}
+  \begin{itemize}
+  \item Für die Verbindung des Mastes (Anemometer und Windfahne) mit der Wetterstation
+  \item Befestigung an de Wetterstaion mittels Steckverbindung
+  \item Verbindung mit dem Mast über Steckverbindung und optionale Schraubverbindung
+  \end{itemize}
+  \frametitle{Adapter}
+  \begin{figure}[H]
+    \centering \includegraphics[width=.7\textwidth]{./img/ST_Adapterv4}
+  \end{figure}
+\end{frame}
+\begin{frame}
+  \frametitle{Hauptgehäuse}
+  \begin{itemize}
+  \item Für die Unterbringung des Mikrokontrollers, der Spannungsversorgung und des Motortreibers
+  \item Befestigung an der Wetterstation mittels Klebverbindung
+  \item Befestigung des Deckels mittels Steckverbindung und optionalen Kabelbindern
+  \end{itemize}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=.7\textwidth]{./img/ST_MainBodyv13}
+  \end{figure}
+\end{frame}
+\begin{frame}
+  \frametitle{Allgemeines}
+  \begin{itemize}
+  \item Entwurf der Komponenten in Autocad Fusion 360
+  \item Material der Komponenten: PLA
+  \item Druck mit 2-3 Außenlagen und 10\%-20\% Infill
+  \end{itemize}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\textwidth]{./img/Wetterstaion_fertig1.jpg}
+\end{figure}
+  
+\end{frame}
 \section{Fazit}
 
 
@@ -224,7 +283,7 @@
 %     \centering
 %     \includegraphics[width=0.6\textwidth]{./img/Representation-of-azimuth-and-zenith-angles.png}
 %     \caption{Beschreibung der Sonnenposition durch Zenith und
-%       Azimut~\cite[]{Nou2016}}\label{fig:zen_azi}
+%     Azimut~\cite[]{Nou2016}}\label{fig:zen_azi}
 %   \end{figure}
 % \end{frame}
 % \begin{frame}
@@ -238,7 +297,7 @@
 %     \centering
 %     \includegraphics[width=0.6\textwidth]{./img/Representation-of-azimuth-and-zenith-angles.png}
 %     \caption{Beschreibung der Sonnenposition durch Zenith und
-%       Azimut~\cite[]{Nou2016}}\label{fig:zen_azi}
+%     Azimut~\cite[]{Nou2016}}\label{fig:zen_azi}
 %   \end{figure}
 % \end{frame}
 % \subsection{Ausstehend}
@@ -287,7 +346,8 @@
 %   \item \emph{3D-Druck - Halterung für Sensoren}
 %   \end{itemize}
 %   \begin{figure}[hbtp]
-%     \centering \includegraphics[width=0.8\textwidth]{./img/druck.png}
+%     \centering
+%     \includegraphics[width=0.8\textwidth]{./img/druck.png}
 %     \caption{Adapter und Halter für die Sensoren}
 %   \end{figure}
 % \end{frame}

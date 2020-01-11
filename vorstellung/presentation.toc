@@ -1,6 +1,0 @@
-\babel@toc {german}{}
-\beamer@sectionintoc {1}{Einleitung}{2}{0}{1}
-\beamer@sectionintoc {2}{Live-Demo}{5}{0}{2}
-\beamer@sectionintoc {3}{Nutzeroberfl\"ache}{6}{0}{3}
-\beamer@sectionintoc {4}{3D gedruckte Komponenten}{9}{0}{4}
-\beamer@sectionintoc {5}{Fazit}{10}{0}{5}
