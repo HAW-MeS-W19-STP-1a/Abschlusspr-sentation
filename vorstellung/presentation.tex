@@ -155,85 +155,59 @@
 \section{Live-Demo}
 
 \section{Firmware}
-\begin{frame}{Firmware}
-    Firmware seit dem Zwischenvortrag weiter ausgebaut:
-    \begin{itemize}
-        \item Kalibrierungsfahrt für Magnetometer
-        \item Motorsteuerung
-        \item Ausrichtung und Nachführung des Solarpanels
-        \item NMEA 0183 Protokoll-Auswertung erweitert: Höhe über MSL
-        \item Bluetooth-Kommunikation: AT-Befehlssatz und Data Mode
+
+\begin{frame}{Firmware}{Nachführung des Solarpanels}
+    \begin{itemize}[<+->]
+        \item Optimierung des Wirkungsgrades durch Nachführung des Panels
+        \begin{itemize}
+            \item Sonnenstand über Aufstellungsort und aktuellen Zeitstempel
+        \end{itemize}
+        \item Lageregelung unabhängig von der Aufstellungsrichtung
+        \item Magnetometer: lokale Störungen kompensiert
+        \item GPS-Ortung und -Zeitsynchronisation
+        \begin{itemize}
+            \item Auch über Bluetooth konfigurierbar
+        \end{itemize}
     \end{itemize}
 \end{frame}
 
-\begin{frame}{Firmware}{Magnetometer-Kalibrierung}
-    \begin{itemize}
-        \item Bedingt durch Berechnung des Winkels über
-    \end{itemize}
-    \begin{equation*}
-        \theta = 180\,^\circ + \mathrm{atan2}(x,\,y) \cdot \frac{180\,^\circ}{\pi}
-    \end{equation*}
-    \begin{itemize}
-        \item Für korrekte Winkelbestimmung: Punkte aus X- und Y-Feldstärke kreisförmig um $(0,\,0)$
-    \end{itemize}
-    \begin{figure}[H]
+\begin{frame}{Firmware}{Kommunikation}
+    \begin{itemize}[<+->]
+        \item Kommunikation nutzt AT-Protokoll
+        \begin{itemize}
+            \item Für Terminaleingabe und Programmverarbeitung geeignet
+        \end{itemize}
+        \item Serial-over-Bluetooth: Virtueller COM-Port
+        \item Keine speziellen Treiber notwendig
+    \end{itemize}    
+\end{frame}
+
+\begin{frame}{Firmware}{Sensordaten}
+    \begin{figure}
         \centering
-        \includegraphics[width=.5\textwidth]{./img/Kursber.pdf}
+        \includegraphics[width=\textwidth]{./img/Datenverteilung.pdf}
     \end{figure}
 \end{frame}
 
-\begin{frame}{Firmware}{Magnetometer-Kalibrierung}
-    \begin{itemize}
-        \item Drehung des Turms um $360\,^\circ$
-        \item Aufzeichnung Minimal-, Maximal- und Mittelwerte der X- und Y-Komponenten des Magnetfeldes
-    \end{itemize}
+\begin{frame}{Firmware}{Statusanzeige}
+    \textbf{Systemstatus:}
     \begin{figure}[H]
-        \centering
-        \includegraphics[width=.6\textwidth]{./img/qmc5883_raw.pdf}
+        \includegraphics[width=.8\textwidth]{./img/Systemstatus.pdf}
     \end{figure}
-    \begin{itemize}
-        \item Kursberechnung liefert hier falsche Werte
-    \end{itemize}
 \end{frame}
 
-\begin{frame}{Firmware}{Magnetometer-Kalibrierung}
-    \begin{itemize}
-        \item Mittelwerte: $(0,\,0)$ in den Mittelpunkt der Ellipse
-        \item Min- und Max-Werte: Ellipse kreisförmig stauchen
-    \end{itemize}
+\begin{frame}{Firmware}{Statusanzeige}
+    \textbf{Bluetooth Status:}
     \begin{figure}[H]
-        \centering
-        \includegraphics[width=.6\textwidth]{./img/qmc5883_compensated.pdf}
+        \includegraphics[width=.8\textwidth]{./img/Bluetoothstatus.pdf}
     \end{figure}
-    \begin{itemize}
-        \item Sensor für den aktuellen Standpunkt kalibriert
-    \end{itemize}
 \end{frame}
 
-\begin{frame}{Firwmare}{AT-Befehle}
-    Konfiguration der Wetterstation über ``AT-Befehle'':
-    \begin{itemize}
-        \item AT+CTEMP: Temperaturmesswerte
-        \item AT+CWIND: Windrichtung und -geschwindigkeit
-        \item ...
-        \item AT+CTURN=C: Magnetometer-Kalibrierung starten
-        \item AT+CTRACK=1: Nachführung aktivieren
-    \end{itemize}
-\end{frame}
-
-\begin{frame}{Firmware}{AT-Befehle}
-    Für das Debugging:
-    \begin{itemize}
-        \item AT+CDEBUG: Debug-Ausgabe auf Bluetooth umleiten
-        \item AT+CGNSTST: NMEA 0183 auf Bluetooth umleiten
-    \end{itemize}
+\begin{frame}{Firmware}{Statusanzeige}
+    \textbf{Motorsteuerung Status:}
     \begin{figure}[H]
-        \centering
-        \includegraphics[width=.8\textwidth]{./img/Datenpfad_BT.pdf}
+        \includegraphics[width=.8\textwidth]{./img/Motorstatus.pdf}
     \end{figure}
-    \begin{itemize}
-        \item Verlassen über `+++' 
-    \end{itemize}
 \end{frame}
 
 \section{Nutzeroberfläche}
@@ -498,8 +472,80 @@
   \bibliographystyle{plainnat} \bibliography{literature}
 \end{frame}
 
-\section{Technische Folien}
+\appendix
+\section{Magnetometer-Kalibrierung}
+\begin{frame}{Firmware}{Magnetometer-Kalibrierung}
+    \begin{itemize}
+        \item Bedingt durch Berechnung des Winkels über
+    \end{itemize}
+    \begin{equation*}
+        \theta = 180\,^\circ + \mathrm{atan2}(x,\,y) \cdot \frac{180\,^\circ}{\pi}
+    \end{equation*}
+    \begin{itemize}
+        \item Für korrekte Winkelbestimmung: Punkte aus X- und Y-Feldstärke kreisförmig um $(0,\,0)$
+    \end{itemize}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.5\textwidth]{./img/Kursber.pdf}
+    \end{figure}
+\end{frame}
 
+\begin{frame}{Firmware}{Magnetometer-Kalibrierung}
+    \begin{itemize}
+        \item Drehung des Turms um $360\,^\circ$
+        \item Aufzeichnung Minimal-, Maximal- und Mittelwerte der X- und Y-Komponenten des Magnetfeldes
+    \end{itemize}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{./img/qmc5883_raw.pdf}
+    \end{figure}
+    \begin{itemize}
+        \item Kursberechnung liefert hier falsche Werte
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Firmware}{Magnetometer-Kalibrierung}
+    \begin{itemize}
+        \item Mittelwerte: $(0,\,0)$ in den Mittelpunkt der Ellipse
+        \item Min- und Max-Werte: Ellipse kreisförmig stauchen
+    \end{itemize}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.6\textwidth]{./img/qmc5883_compensated.pdf}
+    \end{figure}
+    \begin{itemize}
+        \item Sensor für den aktuellen Standpunkt kalibriert
+    \end{itemize}
+\end{frame}
+
+\section{AT-Befehlssatz}
+\begin{frame}{Firwmare}{AT-Befehle}
+    Konfiguration der Wetterstation über ``AT-Befehle'':
+    \begin{itemize}
+        \item AT+CTEMP: Temperaturmesswerte
+        \item AT+CWIND: Windrichtung und -geschwindigkeit
+        \item ...
+        \item AT+CTURN=C: Magnetometer-Kalibrierung starten
+        \item AT+CTRACK=1: Nachführung aktivieren
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{Firmware}{AT-Befehle}
+    Für das Debugging:
+    \begin{itemize}
+        \item AT+CDEBUG: Debug-Ausgabe auf Bluetooth umleiten
+        \item AT+CGNSTST: NMEA 0183 auf Bluetooth umleiten
+    \end{itemize}
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=.8\textwidth]{./img/Datenpfad_BT.pdf}
+    \end{figure}
+    \begin{itemize}
+        \item Verlassen über `+++' 
+    \end{itemize}
+\end{frame}
+
+\section{Benutzeroberfläche}
 \begin{frame}
   \frametitle{Model-View-Controller}
   \begin{figure}[H]
