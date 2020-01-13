@@ -81,10 +81,11 @@
 \usepackage{graphicx} % Allows including images
 \usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
 \usepackage[german]{babel} % Required to compile in Windows
-\usepackage[latin1]{inputenc} \usepackage{caption}
+\usepackage[utf8]{inputenc} \usepackage{caption}
 \usepackage{subcaption}
 % \usepackage{physics}
 \usepackage{mathtools} \usepackage{natbib} \usepackage[T1]{fontenc}
+\usepackage{textcomp}
 
 
 \AtBeginSection[]{
@@ -103,12 +104,12 @@
 % ----------------------------------------------------------------------------------------
 
 \title[]{Projekt 1a:
-  Abschlusspräsentation} % The short title appears at the bottom of every slide, the full title is only on the title page
+  AbschlussprÃ¤sentation} % The short title appears at the bottom of every slide, the full title is only on the title page
 
 \author{Isabell Albrecht, Erik Engelhardt, Oliver Kochan, Florian
   Steffens} % Your name
 \institute[HAW] % Your institution as it will appear on the bottom of every slide, may be shorthand to save space
-{ Hochschule für angewandte Wissenschaften -- Hamburg
+{ Hochschule fÃ¼r angewandte Wissenschaften -- Hamburg
   \\ % Your institution for the title page
   \medskip
   % \textit{erik.engelhardt@haw-hamburg.de,
@@ -133,7 +134,7 @@
     \begin{minipage}[t]{0.45\linewidth}
       \centering
       \includegraphics[width=\linewidth]{img/Wetterstation_1.png}
-    \end{minipage}% <- sonst wird hier ein Leerzeichen eingefÃ¼gt
+    \end{minipage}% <- sonst wird hier ein Leerzeichen eingefÃƒÅ’gt
     \hfill
     \begin{minipage}[t]{0.45\linewidth}
       \centering
@@ -153,7 +154,7 @@
 
 \section{Live-Demo}
 
-\section{Nutzeroberfläche}
+\section{NutzeroberflÃ¤che}
 
 \begin{frame}
   \frametitle{Funktionen}
@@ -174,8 +175,8 @@
   \begin{itemize}
   \item Speichern und Laden von Messdaten auf dem Computer
   \item Auslagerung der Kommunikation mit der Wetterstation in einen eigenen Task
-  \item Einstellen der Kommunikationsschnittstelle über die Benutzeroberfläche
-  \item Benutzerdefinierte Änderung der Position und des Datums / der Zeit über ein Bedienelement
+  \item Einstellen der Kommunikationsschnittstelle Ã¼ber die BenutzeroberflÃ¤che
+  \item Benutzerdefinierte Ã„nderung der Position und des Datums / der Zeit Ã¼ber ein Bedienelement
   \end{itemize}
 \end{frame}
 \begin{frame}
@@ -188,19 +189,19 @@
 \begin{frame}
   \frametitle{Verwendete Python-Packages}
   \begin{itemize}
-  \item PyQt5: Als Framework für die Oberfläche.
-  \item pyqtgraph: Für die graphische Darstellung der Messdaten.
-  \item serial: Für die serielle Kommunikation, über Bluetooth, mit
+  \item PyQt5: Als Framework fÃ¼r die OberflÃ¤che.
+  \item pyqtgraph: FÃ¼r die graphische Darstellung der Messdaten.
+  \item serial: FÃ¼r die serielle Kommunikation, Ã¼ber Bluetooth, mit
     der Wetterstation.
-  \item pandas: Für die Strukturierung der Messdaten.
-  \item numpy: Für das Erstellen von Testdaten.
+  \item pandas: FÃ¼r die Strukturierung der Messdaten.
+  \item numpy: FÃ¼r das Erstellen von Testdaten.
   \end{itemize}
 
 \end{frame}
 
 \section{3D gedruckte Komponenten}
 \begin{frame}
-  \frametitle{Nebengehäuse}
+  \frametitle{NebengehÃ¤use}
   \begin{itemize}
   \item Sichere Unterbringung von GPS-Modul, Kompass-Modul, und Neigungssensor
   \item Befestigung an der Wetterstation mittels Schrauben
@@ -212,9 +213,9 @@
 \end{frame}
 \begin{frame}
   \begin{itemize}
-  \item Für die Verbindung des Masts (Anemometer und Windfahne) mit der Wetterstation
+  \item FÃ¼r die Verbindung des Masts (Anemometer und Windfahne) mit der Wetterstation
   \item Befestigung an de Wetterstation mittels Steckverbindung
-  \item Verbindung mit dem Mast über Steckverbindung und optionale Schraubverbindung
+  \item Verbindung mit dem Mast Ã¼ber Steckverbindung und optionale Schraubverbindung
   \end{itemize}
   \frametitle{Adapter}
   \begin{figure}[H]
@@ -222,9 +223,9 @@
   \end{figure}
 \end{frame}
 \begin{frame}
-  \frametitle{Hauptgehäuse}
+  \frametitle{HauptgehÃ¤use}
   \begin{itemize}
-  \item Für die Unterbringung des Mikrocontrollers, der Spannungsversorgung und des Motortreibers
+  \item FÃ¼r die Unterbringung des Mikrocontrollers, der Spannungsversorgung und des Motortreibers
   \item Befestigung an der Wetterstation mittels Klebverbindung
   \item Befestigung des Deckels mittels Steckverbindung und optionalen Kabelbindern
   \end{itemize}
@@ -238,7 +239,7 @@
   \begin{itemize}
   \item Entwurf der Komponenten in Autocad Fusion 360
   \item Material der Komponenten: PLA
-  \item Druck mit 2-3 Außenlagen und 10\%-20\% Infill
+  \item Druck mit 2-3 AuÃŸenlagen und 10\%-20\% Infill
   \end{itemize}
 \begin{figure}[H]
   \centering
@@ -246,8 +247,70 @@
 \end{figure}
   
 \end{frame}
-\section{Fazit}
 
+\section{Spannungsversorgung}
+\begin{frame}
+\frametitle{Grundlegendes}
+\begin{itemize}
+\item Erstellung von zwei Platinen (Power- und Sensorboard)
+\item Steckbarer Aufbau
+\item Entwurf mit ...
+\end{itemize}
+
+\end{frame}
+\begin{frame}
+  \frametitle{Power-Board}
+  \begin{figure}[H]
+    \centering
+    \includegraphics[width=0.7\textwidth]{./img/PCB_Power_3D_top.PNG}
+  \end{figure}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Power-Board}
+	\begin{itemize}
+		\item Erzeugung von 5V
+		\item Messung von Strom und Spannung
+		\item EnergiesparmaÃŸnahmen
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+	\frametitle{Spannungsabschaltung 5V}
+	 \begin{figure}[H]
+    		\centering
+   		 \includegraphics[width=0.7\textwidth]{./img/spannungsabschaltung.png}
+ 	 \end{figure}
+
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Sensor-Board}
+	 \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=0.7\textwidth]{./img/PCB_Sensors_3D_top.PNG}
+  	 \end{figure}
+\end{frame}
+
+
+\section{Fazit}
+\begin{frame}
+	\frametitle{Wetterstation}
+	 \begin{figure}[H]
+    		\centering
+    		\includegraphics[width=0.7\textwidth]{./img/Wetterstaion_fertig1.JPG}
+  	 \end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Fazit}
+	\begin{itemize}
+		\item 
+	\end{itemize}
+
+\end{frame}
 
 
 
@@ -261,15 +324,15 @@
 % \begin{frame}
 %   \frametitle{Software - Fertig}
 %   \begin{itemize}
-%   \item \emph{Grundgerüst}
+%   \item \emph{GrundgerÃ¼st}
 %   \item \emph{Ansteuerung I2C, SPI, UART, ADC, RTC}
 %   \item \emph{Einlesen und Umrechnen der Sensordaten}
 %   \item \emph{Lageregelung}
 %   \item \emph{Auswertung NMEA-Sentences vom GPS-Modul}
 %   \item \emph{Berechnung von Azimut und Elevation}
-%   \item \emph{Kommunikation Ã¼ber Bluetooth}
-%   \item \emph{Externe Bibliothek für FAT32-Dateisystem}
-%   \item \emph{Energiesparmaßnahmen}
+%   \item \emph{Kommunikation ÃƒÅ’ber Bluetooth}
+%   \item \emph{Externe Bibliothek fÃ¼r FAT32-Dateisystem}
+%   \item \emph{EnergiesparmaÃŸnahmen}
 %   \end{itemize}
 % \end{frame}
 
@@ -290,8 +353,8 @@
 %   \frametitle{Berechnung der Sonnenposition (Beispiel)}
 %   \begin{itemize}
 %   \item Hamburg, 26.11.2019, 9:30h
-%   \item Zenith = 81.1°
-%   \item Azimuth = 143.3°
+%   \item Zenith = 81.1Â°
+%   \item Azimuth = 143.3Â°
 %   \end{itemize}
 %   \begin{figure}[hbtp]
 %     \centering
@@ -304,7 +367,7 @@
 % \begin{frame}
 %   \frametitle{Software - Ausstehend}
 %   \begin{itemize}
-%   \item \emph{Zeitgesteuerte Nachführung des Panels}
+%   \item \emph{Zeitgesteuerte NachfÃ¼hrung des Panels}
 %   \item \emph{Bluetooth: AT command set; Demo-Mode}
 %   \item \emph{Visualisierungssoftware auf einem PC}
 %   \item \emph{Speichern der Sensordaten auf der SD-Karte}
@@ -342,13 +405,13 @@
 %   \subsection{Fertig}
 %   \begin{itemize}
 %   \item \emph{Planung}
-%   \item \emph{Stabilität des Solarmoduls}
-%   \item \emph{3D-Druck - Halterung für Sensoren}
+%   \item \emph{StabilitÃ¤t des Solarmoduls}
+%   \item \emph{3D-Druck - Halterung fÃ¼r Sensoren}
 %   \end{itemize}
 %   \begin{figure}[hbtp]
 %     \centering
 %     \includegraphics[width=0.8\textwidth]{./img/druck.png}
-%     \caption{Adapter und Halter für die Sensoren}
+%     \caption{Adapter und Halter fÃ¼r die Sensoren}
 %   \end{figure}
 % \end{frame}
 
@@ -359,9 +422,9 @@
 %   \item \emph{Montage - Halterungen}
 %   \item \emph{Montage - Sensoren}
 %   \item \emph{Montage - Kabel}
-%   \item \emph{Montage - Gehäuse (Platine)}
+%   \item \emph{Montage - GehÃ¤use (Platine)}
 %   \item \emph{Montage - Spannungsversorgung}
-%   \item \emph{3D-Druck - Gehäuse}
+%   \item \emph{3D-Druck - GehÃ¤use}
 %   \end{itemize}
 % \end{frame}
 
@@ -371,8 +434,8 @@
 % \begin{frame}
 %   \frametitle{Zeitplan}
 %   \begin{itemize}
-%   \item \emph{Planung ist vollständig abgeschlossen}
-%   \item \emph{Fortführung nach Ankunft der Platine}
+%   \item \emph{Planung ist vollstÃ¤ndig abgeschlossen}
+%   \item \emph{FortfÃ¼hrung nach Ankunft der Platine}
 %   \item \emph{Dokumentation} %wird Montag eingereicht
 %   \end{itemize}
 % \end{frame}
