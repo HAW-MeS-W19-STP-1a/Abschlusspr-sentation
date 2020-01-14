@@ -508,9 +508,13 @@
 %   \item \emph{Dokumentation} %wird Montag eingereicht
 %   \end{itemize}
 % \end{frame}
-\begin{frame}[allowframebreaks]
-  \frametitle{Literatur- und Quellenverzeichnis}
-  \bibliographystyle{plainnat} \bibliography{literature}
+%\begin{frame}[allowframebreaks]
+%  \frametitle{Literatur- und Quellenverzeichnis}
+%  \bibliographystyle{plainnat} \bibliography{literature}
+%\end{frame}
+
+\begin{frame}
+
 \end{frame}
 
 \appendix
@@ -584,6 +588,69 @@
     \begin{itemize}
         \item Verlassen über `+++' 
     \end{itemize}
+\end{frame}
+
+\section{NMEA 0183 (GPS)}
+\begin{frame}{Firmware}{NMEA 0183}
+    \textbf{GPRMC: Minimum recommended GPS/transit data}
+
+    \begin{scriptsize}
+    \begin{center}
+        \$GPRMC,225446.00,A,5355.63,N,01002.26,W,082.5,054.7,031219,020.3,E*4D
+    \end{center}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|l|l|}
+            \hline
+            \textbf{Feld}   & \textbf{Beschreibung}\\
+            \hline
+            \$              & Startzeichen\\
+            GPRMC           & Sentence-Typ\\
+            225446.00       & UTC-Uhrzeit im Format hhmmss.zz\\
+            A               & Gültigkeit der Daten: \texttt{A} = gültig, \texttt{V} = kein Fix\\
+            5355.63,N       & Breitengrad im Format ddmm.mm, \texttt{N} = Nord, \texttt{S} = Süd\\
+            01002.26,E      & Längengrad im Format dddmm.mm, \texttt{E} = Ost, \texttt{W} = West\\
+            082.5           & Geschwindigkeit über Grund in Knoten\\
+            054.7           & Rechtweisender Kurs\\
+            031219          & UTC-Datum im Format DDMMYY\\
+            020.3,E         & Variation, \texttt{E} = Ost, \texttt{W} = West\\
+            *4D             & Prüfsumme\\
+            \hline
+        \end{tabular}
+    \end{table}
+    \end{scriptsize}
+\end{frame}
+
+\begin{frame}{Firmware}{NMEA 0183}
+\textbf{GPGGA: Global Positioning System Fix Data}
+
+\begin{scriptsize}
+    \begin{center}
+        \$GPGGA,225446.00,5355.63,N,01002.26,E,1,09,1.5,419.3,M,39.5,M,,*66
+    \end{center}
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{|l|l|}
+            \hline
+            \textbf{Feld}   & \textbf{Beschreibung}\\
+            \hline
+            \$              & Startzeichen\\
+            GPGGA           & Sentence-Typ\\
+            225446.00       & UTC-Uhrzeit im Format hhmmss.zz\\
+            5355.63,N       & Breitengrad im Format ddmm.mm, \texttt{N} = Nord, \texttt{S} = Süd\\
+            01002.26,E      & Längengrad im Format dddmm.mm, \texttt{E} = Ost, \texttt{W} = West\\
+            1               & Fix Typ: 0 = kein Fix, 1 = GPS, 2 = differential GPS\\
+            09              & Anzahl der empfangenen Satelliten\\
+            1.5             & Relative genauigkeit der Position (HDOP)\\
+            419.3,M         & Höhe über dem mittleren Meeresspiegel (MSL)\\
+            39.5,M          & Höhe über dem WGS84-Geoid\\
+            (leer)          & Zeit seit letztem DGPS-fix (bei GPS leer)\\
+            (leer)          & DGPS-Stationskennung (0000-4096, bei GPS leer)\\
+            *66             & Prüfsumme\\
+            \hline
+        \end{tabular}
+    \end{table}
+\end{scriptsize}
 \end{frame}
 
 \section{Benutzeroberfläche}
